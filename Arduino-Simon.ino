@@ -36,10 +36,6 @@ void loop() {
     {
       gameState = 2;
     }
-    else
-    {
-      resetGame();
-    }
   }
   if (gameState == 2) //reading
   {
@@ -58,7 +54,7 @@ void loop() {
     int pressedButton = getPressedButton();
     if (pressedButton != -1)
     {
-      lightOn(false, convertButtonToLED(pressedButton);
+      lightOn(false, convertButtonToLED(pressedButton));
       if (checkAnswer(convertButtonToLED(pressedButton), moveIndex) == true)
       {
         score++;
@@ -79,7 +75,7 @@ void loop() {
         lightOn(true, -1);
         delay(500);
         lightOff(true, -1);  
-        lastMoveIndex = 0;
+        moveIndex = 0;
         currentIndex = -1;
         score = 0;
       }
